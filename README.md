@@ -22,7 +22,7 @@ Aplicación web desarrollada con Laravel 12 para gestionar productos e inventari
 
 ## ⚙️ Configuración Inicial
 
-1. Clonar el proyecto o crear uno nuevo:
+1. Inicializar el proyecto:
 ```bash
 composer install
 cp .env.example .env
