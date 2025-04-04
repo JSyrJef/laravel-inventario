@@ -1,66 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel 12 – Sistema de Gestión de Productos e Inventario
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicación web desarrollada con Laravel 12 para gestionar productos e inventario. Incluye autenticación, control de stock y diseño responsivo con Tailwind CSS.
 
-## About Laravel
+## ✨ Tecnologías Utilizadas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Laravel 12** – Framework principal
+- **Tailwind CSS** – Estilos responsivos
+- **MySQL** – Base de datos relacional
+- **Blade** – Motor de plantillas
+- **Eloquent ORM** – Manejo de base de datos
+- **Laravel Breeze** – Autenticación sencilla
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📁 Estructura del Proyecto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- `/app/Models` – Modelos `Product` y `InventoryMovement`
+- `/app/Http/Controllers` – Controladores principales `InventoryMovementController` y `ProductController`
+- `/resources/views` – Vistas Blade organizadas
+- `/routes/web.php` – Rutas web
+- `/database/migrations` – Esquema de base de datos
+- `/database/seeders` – Seeder para usuario admin
 
-## Learning Laravel
+## ⚙️ Configuración Inicial
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clonar el proyecto o crear uno nuevo:
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan storage:link
+php artisan serve
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. Configurar `.env` para base de datos MySQL
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_de_tu_base_de_datos
+DB_USERNAME=tu_usuario_mysql
+DB_PASSWORD=tu_contraseña_mysql
+```
+3. Ejecutar migraciones y seeder:
+```bash
+php artisan migrate --seed
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Crear enlace simbólico de almacenamiento:
+```bash
+php artisan storage:link
+```
 
-## Laravel Sponsors
+5. Iniciar el servidor local:
+```bash
+php artisan serve
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📅 Funcionalidades
 
-### Premium Partners
+### Productos
+- Crear, ver, editar, eliminar productos
+- Campos: nombre, descripción, precio, imagen, cantidad
+- Búsqueda y filtrado de productos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Inventario
+- Registrar entradas/salidas de stock
+- Historial de movimientos
+- Actualización automática del stock
 
-## Contributing
+## 🔐 Usuario Predeterminado
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Al iniciar por primera vez, se crea automáticamente un usuario:
 
-## Code of Conduct
+> Crendenciales de Usuario Predeterminado 🔐
+- **Correo**: `admin@example.com`
+- **Contraseña**: `admin20#25`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> ⚠️ Cambiar la contraseña al iniciar sesión por seguridad.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
