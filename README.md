@@ -95,5 +95,4 @@ Al iniciar por primera vez, se crea automáticamente un usuario:
 - **Contraseña**: `admin20#25`
 
 > ⚠️ Cambiar la contraseña al iniciar sesión por seguridad.
-
 ---
