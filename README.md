@@ -31,6 +31,11 @@ php artisan migrate --seed
 php artisan storage:link
 php artisan serve
 ```
+> npm run dev compila los Assets (CSS,Tailwind y JavaScript)
+```bash
+npm run dev
+```
+> Se necesita Nodejs y npm instalados
 
 2. Configurar `.env` para base de datos MySQL
 ```bash
@@ -55,7 +60,23 @@ php artisan storage:link
 ```bash
 php artisan serve
 ```
+## 🎨 Compilación de Assets (CSS y JavaScript)
+Para generar los archivos de estilo y JavaScript que utiliza la aplicación, se deben ejecutar los siguientes pasos adicionales.
 
+1. Instalar Node.js y npm
+> Descargar [Nodejs](https://nodejs.org/es)
+
+2. Instalar las dependencias de frontend
+En la raíz del proyecto, ejecuta:
+```bash
+npm install
+```
+3. Compilar los assets
+Para compilar los archivos de CSS y JavaScript (utilizando Tailwind CSS), ejecuta:
+
+```bash
+npm run dev
+```
 ## 📅 Funcionalidades
 
 ### Productos
