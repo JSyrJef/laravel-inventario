@@ -72,7 +72,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            // Delete old image if exists
+            // Eliminar la imagen anterior si existe.
             if ($product->image) {
                 Storage::disk('public')->delete($product->image);
             }
@@ -89,7 +89,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        // Delete image if exists
+        // Eliminar la imagen si existe
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
         }
