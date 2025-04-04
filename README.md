@@ -27,15 +27,7 @@ Aplicación web desarrollada con Laravel 12 para gestionar productos e inventari
 composer install
 cp .env.example .env
 php artisan key:generate
-php artisan migrate --seed
-php artisan storage:link
-php artisan serve
 ```
-> npm run dev compila los Assets (CSS,Tailwind y JavaScript)
-```bash
-npm run dev
-```
-> Se necesita Nodejs y npm instalados
 
 2. Configurar `.env` para base de datos MySQL
 ```bash
@@ -60,6 +52,11 @@ php artisan storage:link
 ```bash
 php artisan serve
 ```
+6. Compilar los Assets (CSS,Tailwind y JavaScript)
+```bash
+npm run dev
+```
+> Se necesita Nodejs y npm instalados
 ## 🎨 Compilación de Assets (CSS y JavaScript)
 Para generar los archivos de estilo y JavaScript que utiliza la aplicación, se deben ejecutar los siguientes pasos adicionales.
 
